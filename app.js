@@ -5,8 +5,6 @@ const toDo = require('./to-do/to-do');
 
 let command = argv._[0];
 
-// console.log("command: ", command);
-
 switch (command) {
     case 'create': {
         let descripcion = argv.description;
@@ -25,18 +23,13 @@ switch (command) {
 
     case 'list': {
         let completado = argv.filter;
-
         let tareas = toDo.cargarDBConFiltro(completado);
-        // console.log(tareas);
-
-        // toDo.list(tareas);
-
+        toDo.list(tareas);
         break;
     }
 
     case 'update': {
-        let descripcion = argv.description;
-        let completado = argv.completado;
+        let descripcion = argv.description, completado = argv.completado;
         if(toDo.update(descripcion, completado)){
             console.log('La tarea se actualizó correctamente');
         } else {
