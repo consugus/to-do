@@ -13,6 +13,7 @@ switch (command) {
         console.log('Se guardó la tarea exitosamente');
         break;
     }
+
     case 'listall': {
         let tareas = toDo.cargarDB()
 
@@ -37,6 +38,7 @@ switch (command) {
         };
         break;
     }
+
     case 'delete': {
         let descripcion = argv.description;
         if(toDo.deleteTask(descripcion)){
@@ -46,6 +48,7 @@ switch (command) {
         };
         break;
     }
+
     default: {
         console.log('El comando no es reconocido');
         break;
