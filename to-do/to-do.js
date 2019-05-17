@@ -26,8 +26,9 @@ const cargarDB = () => {
     return listadoPorHacer;
 }
 
-const cargarDBConFiltro = (comp) => {
-    let completado = (comp == "true");
+const cargarDBConFiltro = (completado) => {
+    // El parámetro completado llega a la función como un string, y debe ser convertido a booleano
+    completado = (completado == "true");
 
     let tmpDB;
     try {
